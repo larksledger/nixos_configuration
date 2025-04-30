@@ -56,7 +56,7 @@
  services.xserver.displayManager.gdm.wayland = true;
  
  hardware.nvidia.package = pkgs.linuxKernel.packages.linux_6_6.nvidia_x11;
- hardware.nvidia.open = true;
+ hardware.nvidia.open = false;
  hardware.nvidia.modesetting.enable = true;
  programs.zsh.enable = true;
 

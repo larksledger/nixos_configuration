@@ -111,7 +111,7 @@ in
      (nerdfonts.override { fonts = ["FiraCode"];})
      fira-code
  ]; 
-
+  home-manager.backupFileExtension = "bak";
   home-manager.users.lark = {pkgs, ...}: {
     programs.zsh = {
       enable = true;

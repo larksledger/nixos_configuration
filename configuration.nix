@@ -80,6 +80,7 @@ in
   programs.hyprland.enable = true;
   programs.thunar.enable = true;
   programs.xfconf.enable = true;
+  programs.dconf.enable = true;
   services.gvfs.enable = true;
   services.tumbler.enable = true;
   # List packages installed in system profile. To search, run:
@@ -122,10 +123,21 @@ in
         ll = "ls -l";
         update = "sudo nixos-rebuild switch";
       };
+      sessionVariables = {
+        XURSOR_SIZE = 24;
+        XCURSOR_THEME = "Bibata-Modern-Ice";
+      };
     };
     wayland.windowManager.hyprland = {
       enable = true;
       extraConfig = builtins.readFile NixOSConfigs/hyprland/hyprland.conf; 
+    };
+    home.pointerCursor = {
+      gtk.enable = true;
+      x11.enable = true;
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
+      size = 24;
     };
     home.stateVersion = "24.11";
   };

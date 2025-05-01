@@ -123,6 +123,10 @@ in
         update = "sudo nixos-rebuild switch";
       };
     };
+    wayland.windowManager.hyprland = {
+      enable = true;
+      extraConfig = builtins.readFile NixOSConfigs/hyprland/hyprland.conf; 
+    };
     home.stateVersion = "24.11";
   };
   

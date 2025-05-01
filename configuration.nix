@@ -111,6 +111,21 @@ in
      (nerdfonts.override { fonts = ["FiraCode"];})
      fira-code
  ]; 
+
+  home-manager.users.lark = {pkgs, ...}: {
+    programs.zsh = {
+      enable = true;
+      autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
+      history.size = 10000;
+      shellAliases = {
+        ll = "ls -l";
+        update = "sudo nixos-rebuild switch";
+      };
+    };
+    home.stateVersion = "24.11";
+  };
+  
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

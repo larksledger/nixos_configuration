@@ -93,6 +93,7 @@ in
      vim
      kitty
      firefox
+     vivaldi
      vscodium
      (vscode-with-extensions.override {
        vscode = vscodium;

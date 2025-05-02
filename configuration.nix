@@ -129,20 +129,35 @@ in
         XCURSOR_THEME = "Bibata-Modern-Ice";
       };
     };
+    programs.kitty = {
+      enable = true;
+    };
+    programs.wofi = {
+      enable = true;
+    };
     wayland.windowManager.hyprland = {
       enable = true;
       extraConfig = builtins.readFile NixOSConfigs/hyprland/hyprland.conf; 
     };
-    home.pointerCursor = {
-      gtk.enable = true;
-      x11.enable = true;
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Ice";
-      size = 24;
-    };
     home.stateVersion = "24.11";
   };
-  
+ stylix = {
+   enable = true;
+   image = ./wallpaper.jpg;
+   base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+   fonts = {
+     monospace = {
+       package = pkgs.fira-code;
+       name = "FiraCode Nerd Font Mono";
+     };
+     sizes.terminal = 15;
+    };
+    cursor = {
+      name = "Bibata-Modern-Ice";
+      package = pkgs.bibata-cursors;
+      size = 24;
+    };
+  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

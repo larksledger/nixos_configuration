@@ -143,7 +143,7 @@ in
   };
  stylix = {
    enable = true;
-   image = ./wallpaper.jpg;
+   image = ./wallpaper.png;
    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
    fonts = {
      monospace = {

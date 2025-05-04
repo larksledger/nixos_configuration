@@ -149,6 +149,7 @@ in
    enable = true;
    image = ./wallpaper.png;
    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+   targets.gtk.enable = true;
    fonts = {
      monospace = {
        package = pkgs.fira-code;

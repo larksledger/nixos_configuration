@@ -8,6 +8,9 @@ let
     url = https://github.com/nix-community/home-manager/archive/release-24.11.tar.gz;
     sha256 = "sha256:1qsvg11b5d05z2gvxq2pp6xfg3gpcd363id0h52sicikx3vai93s";
   };
+  logseq-patch = pkgs.logseq.override {
+    electron_27 = pkgs.electron_34;
+  };
 in
 {
   imports =
@@ -107,6 +110,7 @@ in
     wofi
     obs-studio
     keepassxc
+    logseq-patch
   ];
 
  fonts.packages = with pkgs; [

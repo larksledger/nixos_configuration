@@ -11,6 +11,9 @@ let
   logseq-patch = pkgs.logseq.override {
     electron_27 = pkgs.electron_34;
   };
+  theme-name = "gruvbox-dark-hard"; 
+  theme = "${pkgs.base16-schemes}/share/themes/${theme-name}.yaml";
+  wallpaper = ./wallpapers/${theme-name}/starry-sky.png; 
 in
 {
   imports =
@@ -105,6 +108,7 @@ in
        ];
      })
     hyprpanel
+    hyprpaper
     zotero
     blender
     wofi
@@ -139,16 +143,20 @@ in
     programs.wofi = {
       enable = true;
     };
+    services.hyprpaper.enable = true;
     wayland.windowManager.hyprland = {
       enable = true;
       extraConfig = builtins.readFile NixOSConfigs/hyprland/hyprland.conf; 
     };
+
+    stylix.targets.hyprland.enable = true;
+    stylix.targets.hyprpaper.enable = true;
     home.stateVersion = "24.11";
   };
  stylix = {
    enable = true;
-   image = ./wallpaper.png;
-   base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+   image = wallpaper;
+   base16Scheme = theme; 
    targets.gtk.enable = true;
    fonts = {
      monospace = {

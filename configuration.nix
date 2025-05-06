@@ -115,6 +115,10 @@ in
     obs-studio
     keepassxc
     logseq-patch
+    kdenlive
+    audacity
+    seafile-client
+    vlc
   ];
 
  fonts.packages = with pkgs; [
